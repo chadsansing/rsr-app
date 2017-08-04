@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<!--With thanks to Bethany Nowviskie, my students, Codecademy and Wayne Graham (and his book Beginning FacebookGame Apps Development) for getting me this far into coding.-->
+
+<!--Mayostard, mustardayonnaise, and mustmayostarayonnaise are used strictly as an homage to Mr. Show and are not in any way my intellectual property.-->
+
+<!--With technical help from http://sixrevisions.com/web-development/html5-iphone-app/ and http://chronicle.com/blogs/profhacker/host-a-website-on-google-drive/46737.-->
+
+<meta name="description" content="Run, Sandwich, Run! Alpha">
+<meta name="author" description="Chad Sansing">
+<meta charset="utf-8">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="images/sandiwchSprite.png"/>
+
+    <link rel="apple-touch-startup-image" href="sandwichSprite.png" />
+
+<title>Run, Sandwich, Run</title>
+
+<style type="text/css">
+
+body {
+    overflow:hidden;
+    background: #fff;
+    margin:0;
+    padding:0;
+}
+#rsr {
+    width: 320px;
+    height: 460px;
+    background:#fff;
+}
+
+a {font-family:sans-serif; color:#66CC00; text-decoration:none; text-shadow: 2px 2px #AAFF00;}
+h1 {text-align:center; font-family:monospace; font-size: 24px; color:#66CC00; text-shadow: 2px 2px #AAFF00;}
+p {text-align:center;}
+
+#license {font-family:monospace; font-size:10px; color:#CC0066;}
+.licenseLink {font-family:monospace; color:#CC0066; text-decoration:underline; text-shadow:none;}
+#holder {height:145px;}
+#myOrder {font-family:monospace; font-size:11px; color:#CC0066;}
+#rsrButton {text-align:center;}
+#rsrIcon {test-align:center;}
+#tweet {text-align:center; font-family:monospace; font-size:10px; color:#CC0066; text-shadow: 2px 2px #DDD;}
+
+.centerNotes {text-align:center; font-family:monospace; font-size:10px; color:#CC0088;}
+.notes {text-align:left; font-family:monospace; font-size:10px; color:#CC0066;}
+.section {text-align:left; font-family:monospace; font-size:18px; font-weight:bold; color:#66CC00; text-shadow:2px 2px #AAFF00}
+
+</style>
+
+<script type="text/javascript">
+
+function orderUp () {
+
+function Meat(name, score, soggy)
+{
+this.name=name;
+this.score=score;
+this.soggy=soggy;
+}
+
+var anchovy = new Meat("anchovy", 0, 1);
+var bacon = new Meat("bacon", 15, 1);
+var beefHotdog = new Meat("beef hotdog", 5, 1);
+var bloodSausage = new Meat("blood sausage", -30, 1);
+var bologna = new Meat("bologna", 0, 1);
+var bratwurst = new Meat("bratwurst", 10, 1);
+var brisket = new Meat ("brisket", 10, 1);
+var catfish = new Meat("catfish", 5, 1);
+var chicken = new Meat("chicken", 5, 1);
+var chickenCurry = new Meat("chicken curry", 10, 1);
+var chickenPatty = new Meat("chicken patty", 0, 1);
+var chickenSalad = new Meat("chicken salad", 10, 1);
+var chippedBeef = new Meat("chipped beef", -10, 1);
+var cornedBeef = new Meat("corned beef", 10, 1);
+var duckPate = new Meat("duck pate", -10, 1);
+var eggSalad = new Meat("egg salad", 5, 1);
+var friedChicken = new Meat("fried chicken", 10, 1);
+var friedChickenLiver = new Meat("fried chicken liver", -20, 1);
+var goosePate = new Meat("goose pate", -5, 1);
+var fishFilet = new Meat("fish filet", 5, 1);
+var friedOyster = new Meat("fried oyster", 10, 1);
+var ham = new Meat("ham", 5, 1);
+var hamburger = new Meat("hamburger", 5, 1);
+var headCheese = new Meat("head cheese", -30, 1);
+var kielbasa = new Meat("kielbasa", 5, 1);
+var knockwurst = new Meat("knockwurst", 10, 1);
+var liver = new Meat("liver", -20, 1);
+var liverwurst = new Meat("liverwurst", -20, 1);
+var lobsterSalad = new Meat("lobster salad", 10, 1);
+var lox = new Meat("lox", 10, 1);
+var meatball = new Meat("meatball", 10, 1);
+var meatloaf = new Meat("meatloaf", 10, 1);
+var mysteryMeat = new Meat("mystery meat", -10, 1);
+var oliveLoaf = new Meat("olive loaf", -20, 1);
+var pastrami = new Meat("pastrami", 10, 1);
+var peanutButter = new Meat("peanut butter", 10, 1);
+var pepperoni = new Meat("pepperoni", 5, 1);
+var porkHotdog = new Meat("pork hotdog", 5, 1);
+var porkLoin = new Meat("pork loin", 10, 1);
+var porkSausage = new Meat("pork sausage", 5, 1);
+var potRoast = new Meat("pot roast", 10, 1);
+var prawn =  new Meat("prawn", 5, 1);
+var prosciutto = new Meat("prosciutto", 10, 1);
+var pulledChickenBarbecue = new Meat("pulled chicken barbecue", 10, 1);
+var pulledPorkBarbecue = new Meat("pulled pork barbecue", 10, 1);
+var roastBeef = new Meat("roast beef", 5, 1);
+var salami = new Meat("salami", 5, 1);
+var sardine = new Meat("sardine", 0, 1);
+var scrapple = new Meat("scrapple", -20, 1);
+var seafoodSalad = new Meat("seafood salad", 5, 1);
+var shawarma = new Meat("shawarma", 10, 1);
+var souse = new Meat("souse", -40, 1);
+var genericCannedPorkProduct = new Meat("generic canned pork product", 0, 1);
+var steak = new Meat("steak", 10, 1);
+var tongue = new Meat("tongue", -20, 1);
+var tunaSalad = new Meat("tuna salad", 5, 1);
+var turkey = new Meat("turkey", 5, 1);
+var turkeyBacon = new Meat("turkey bacon", 5, 1);
+var turkeyBurger = new Meat("turkey burger", 10, 1);
+var turkeySausage = new Meat("turkey sausage", 5, 1);
+var veal = new Meat("veal", 10, 1);
+
+var meats = [anchovy, bacon, beefHotdog, bloodSausage, bologna, bratwurst, brisket, catfish, chicken, chickenCurry, chickenPatty, chickenSalad, chippedBeef, cornedBeef, duckPate, eggSalad, friedChicken, friedChickenLiver, goosePate, fishFilet, friedOyster, ham, hamburger, headCheese, kielbasa, knockwurst, liver, liverwurst, lobsterSalad, lox, meatball, meatloaf, mysteryMeat, oliveLoaf, pastrami, peanutButter, pepperoni, porkHotdog, porkLoin, porkSausage, potRoast, prawn, prosciutto, pulledChickenBarbecue, pulledPorkBarbecue, roastBeef, salami, sardine, scrapple, seafoodSalad, shawarma, souse, genericCannedPorkProduct, steak, tongue, tunaSalad, turkey, turkeyBacon, turkeyBurger, turkeySausage, veal];
+
+function Cheese(name, score, soggy) {
+
+this.name=name;
+this.score=score;
+this.soggy=soggy;
+
+}
+
+var american = new Cheese("American", 5, 1);
+var bleuCheese = new Cheese("bleu cheese", 10, 0);
+var brie = new Cheese("brie", 10, 0);
+var cheddar = new Cheese ("cheddar", 5, 0);
+var sharpCheddar = new Cheese("sharp cheddar", 10, 0);
+var chevre = new Cheese("chevre", 10, 0);
+var colby = new Cheese("Colby", 5, 1);
+var colbyJack = new Cheese("Colby-Jack", 5, 1);
+var dubliner = new Cheese("Dubliner", 10, 0);
+var feta = new Cheese("feta", 5, 0);
+var gloucester = new Cheese("Gloucester", 5, 0);
+var gouda = new Cheese("gouda", 5, 0);
+var grilledCheese = new Cheese("grilled cheese", 15, 1);
+var leicester = new Cheese("Leicester", 5, 0);
+var limburger = new Cheese("Limburger", -40, 1);
+var montereyJack = new Cheese("Monterey-Jack", 5, 1);
+var mozzarella = new Cheese("mozzarella", 10, 1);
+var muenster = new Cheese("muenster", 5, 1);
+var paneer = new Cheese("paneer", 10, 1);
+var parmesan = new Cheese("Parmesan", 10, 0);
+var pepperJack = new Cheese("pepper-jack", 5, 1);
+var quesoFundido = new Cheese("queso fundido", 15, 1);
+var ricotta = new Cheese("ricotta", 10, 1);
+var romano = new Cheese("Romano", 10, 0);
+var swiss = new Cheese("Swiss", 10, 1);
+
+var cheeses = [american, bleuCheese, brie, cheddar, sharpCheddar, chevre, colby, colbyJack, dubliner, feta, gloucester, gouda, grilledCheese, leicester, limburger, montereyJack, mozzarella, muenster, paneer, parmesan, pepperJack, quesoFundido, ricotta, romano, swiss];
+
+function Vegetable(name, score, soggy) {
+
+this.name=name;
+this.score=score;
+this.soggy=soggy;
+
+}
+
+var alfalfaSprout = new Vegetable("alfalfa sprout", -10, 0);
+var arugula = new Vegetable("arugula", 5, 0);
+var bananaPepper = new Vegetable("banana pepper", 0, 1);
+var beanSprout = new Vegetable("bean sprout", -10, 0);
+var beet = new Vegetable("beet", -20, 1);
+var blackOlive = new Vegetable("black olive", 5, 1);
+var breadAndButterPickle = new Vegetable("bread and butter pickle", 10, 1);
+var celery = new Vegetable("celery", -10, 0);
+var cucumber = new Vegetable("cucumber", 0, 1);
+var friedOkra = new Vegetable("fried okra", -20, 1);
+var grilledVegetable = new Vegetable("grilled vegetable", 5, 1);
+var greenOlive = new Vegetable("green olive", 5, 1);
+var greenPepper = new Vegetable("green pepper", 5, 0);
+var hotPepper = new Vegetable("hot pepper", -10, 1);
+var jalapeno = new Vegetable("jalapeno", -10, 1);
+var lettuce = new Vegetable ("lettuce", 0, 0);
+var mixedGreen = new Vegetable("mixed green", 5, 0);
+var mushroom = new Vegetable("mushroom", 0, 0);
+var onion = new Vegetable("onion", -20, 0);
+var pickle = new Vegetable("pickle", 0, 1);
+var redOnion = new Vegetable("red onion", -10, 1);
+var redPepper = new Vegetable("red pepper", 5, 0);
+var roastedEggplant = new Vegetable("roasted eggplant", 10, 1);
+var roastedRedPepper = new Vegetable("roasted red pepper", 10, 1);
+var roastedVegetable = new Vegetable("roasted vegetable", 5, 1);
+var sauteedMushroom = new Vegetable("sauteed mushroom", 10, 1);
+var sauteedOnion = new Vegetable("sauteed onion", 5, 1);
+var spinach = new Vegetable("spinach", 0, 0);
+var sweetPepper = new Vegetable("sweet pepper", 5, 0);
+var tomato = new Vegetable ("tomato", 5, 1);
+var watercress = new Vegetable("watercress", 0, 0);
+
+var vegetables = [alfalfaSprout, arugula, bananaPepper, beanSprout, beet, blackOlive, breadAndButterPickle, celery, cucumber, friedOkra, grilledVegetable, greenOlive, greenPepper, hotPepper, jalapeno, lettuce, mixedGreen, mushroom, onion, pickle, redOnion, redPepper, roastedEggplant, roastedRedPepper, roastedVegetable, sauteedMushroom, sauteedOnion, spinach, sweetPepper, tomato, watercress];
+
+function Dressing(name, score, soggy) {
+
+this.name=name;
+this.score=score;
+this.soggy=soggy;
+
+}
+
+var aioliMayonnaise = new Dressing("aioli mayonnaise", 5, 1);
+var appleButter = new Dressing("apple butter", 10, 1);
+var banana = new Dressing("banana", 10, 1);
+var barbecueSauce = new Dressing("barbecue sauce", 10, 1);
+var brownMustard = new Dressing("brown mustard", 5, 1);
+var butter = new Dressing("butter", 5, 1);
+var clottedCream = new Dressing("clotted cream", 0, 1);
+var coleslaw = new Dressing("coleslaw", 5, 1);
+var genericConcentratedYeastExtract = new Dressing("generic concentrated yeast extract", -30, 1);
+var cranberrySauce = new Dressing("cranberry sauce", 10, 1);
+var creamCheese = new Dressing("cream cheese", 5, 1);
+var dijonMustard = new Dressing("Dijon mustard", 5, 1);
+var friedEgg = new Dressing("fried egg", 5, 1);
+var habaneroSauce = new Dressing("habanero sauce", -20, 1);
+var genericChocolateHazelnutSpread = new Dressing("generic chocolate-hazelnut spread", 15, 5);
+var honey = new Dressing("honey", 15, 1);
+var honeyMustard = new Dressing("honey mustard", 10, 1);
+var horseradishSauce = new Dressing("horseradish sauce", 5, 1);
+var hotSauce = new Dressing("hot sauce", -10, 1);
+var grapeJelly = new Dressing("grape jelly", 5, 1);
+var strawberryJelly = new Dressing("strawberry jelly", 5, 1);
+var raspberryJam = new Dressing("raspberry jam", 10, 1);
+var blackberryJam = new Dressing("blackberry jam", 10, 1);
+var gooseberryJam = new Dressing("gooseberry jam", 10, 1);
+var boysenberryJam = new Dressing("boysenberry jam", 10, 1);
+var currantJelly = new Dressing("currant jelly", 5, 1);
+var apricotJam = new Dressing("apricot jam", 10, 1);
+var peachJelly = new Dressing("peach jelly", 10, 1);
+var ketchup = new Dressing("ketchup", 5, 1);
+var mangoChutney = new Dressing("mango chutney", 5, 1);
+var mapleSyrup = new Dressing("maple syrup", 10, 1);
+var margarine = new Dressing("margarine", -10, 1);
+var marshmallowFluff = new Dressing("marshmallow fluff", 10, 1);
+var mashedPotato = new Dressing("mashed potato", 10, 1);
+var mayonnaise = new Dressing("mayonnaise", 5, 1);
+var mayostard = new Dressing("mayostard", 5, 1);
+var mustardayonnaise = new Dressing("mustardayonnaise", 5, 1);
+var mustmayostarayonnaise = new Dressing ("mustmayostarayonnaise", 5, 1);
+var mole = new Dressing("mole", 0, 1);
+var oilAndVinegar = new Dressing("oil and vinegar", 0, 1);
+var potatoChip = new Dressing("potato chip", 5, 0);
+var porkRind = new Dressing("pork rind", -20, 0);
+var ranch = new Dressing ("ranch", 5, 1);
+var redPepperFlake = new Dressing ("red pepper flake", -20, 0);
+var redPepperJelly = new Dressing("red pepper jelly", 10, 1);
+var salsa = new Dressing("salsa", 5, 1);
+var salsaVerde = new Dressing("salsa verde", -10, 1);
+var saltAndPepper = new Dressing("salt and pepper", 0, 0);
+var sauerkraut = new Dressing("sauerkraut", 0, 1);
+var stuffing = new Dressing("stuffing", 5, 1);
+var tartarSauce = new Dressing("tartar sauce", 5, 1);
+var thousandIsland = new Dressing("thousand island", 5, 1);
+var tzatziki = new Dressing("tzatziki sauce", 5, 1);
+var yellowMustard = new Dressing("yellow mustard", 5, 1); 
+
+var dressings = [aioliMayonnaise, appleButter, banana, barbecueSauce, brownMustard, butter, clottedCream, coleslaw, genericConcentratedYeastExtract, cranberrySauce, creamCheese, dijonMustard,  friedEgg, habaneroSauce, genericChocolateHazelnutSpread, honey, honeyMustard, horseradishSauce, hotSauce, grapeJelly, strawberryJelly, raspberryJam, blackberryJam, gooseberryJam, boysenberryJam, currantJelly, apricotJam, peachJelly, ketchup, mangoChutney, mapleSyrup, margarine, marshmallowFluff, mashedPotato, mayonnaise, mayostard, mustardayonnaise, mustmayostarayonnaise, mole, oilAndVinegar, potatoChip, porkRind, ranch, redPepperFlake, redPepperJelly, salsa, salsaVerde, saltAndPepper, sauerkraut, stuffing, tartarSauce, thousandIsland, tzatziki, yellowMustard];
+
+function Bread(name, score, soggy) {
+
+this.name=name;
+this.score=score;
+this.soggy=soggy;
+
+}
+
+var bagel = new Bread("a bagel", 5, 0);
+var baguette = new Bread("baguette", 0, 0);
+var biscuit = new Bread("a biscuit", 5, 1);
+var ciabatta = new Bread("ciabatta bread", 5, 0);
+var croissant = new Bread("a croissant", 5, 1);
+var cubanRoll = new Bread("a Cuban roll", 5, 0);
+var englishMuffin = new Bread("an English muffin", 5, 0);
+var flatbread = new Bread("flatbread", 5, 0);
+var focaccia = new Bread("focaccia bread", 5, 0);
+var french = new Bread("French bread", 5, 0);
+var hamburgerBun = new Bread("a hamburger bun", 0, 1);
+var hotdogBun = new Bread("a hotdog bun", 5, 1);
+var italian = new Bread("Italian bread", 5, 0);
+var jellyDonut = new Bread("a jelly donut", 15, 1);
+var kaiserRoll = new Bread("a kaiser roll", 0, 0);
+var pancake = new Bread("a pancake", 10, 1);
+var pita = new Bread("pita bread", 0, 0);
+var potatoRoll = new Bread("a potato roll", 5, 1);
+var pumpernickel = new Bread("pumpernickel", 5, 0);
+var raisinBread = new Bread("raisin bread", 10, 0);
+var rye = new Bread("rye", 5, 0);
+var sourdough = new Bread("sourdough", 0, 0);
+var subRoll = new Bread("a sub roll", 0, 1);
+var flourTortilla = new Bread("a flour tortilla", 0, 1);
+var wheatBread = new Bread("wheat", 0, 1);
+var honeyWheat = new Bread("honey wheat", 5, 1);
+var wheatWrap = new Bread("a wheat wrap", 0, 1);
+var whiteWheat = new Bread("white wheat bread", 0, 1);
+var white = new Bread("white", 0, 1);
+
+var breads = [bagel, baguette, biscuit, ciabatta, croissant, cubanRoll, englishMuffin, flatbread, focaccia, french, hamburgerBun, hotdogBun, italian, jellyDonut, kaiserRoll, pancake, pita, potatoRoll, pumpernickel, raisinBread, rye, sourdough, subRoll, flourTortilla, wheatBread, honeyWheat, wheatWrap, whiteWheat, white];
+
+var distance = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ,15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 29, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+
+var fate = [" Like a bat out of hell, some bedraggled soccer dad rips you screaming from the deli counter and devours you down to the deepest depths of your sandwichy soul.", " A grad student in Dark Ages horticulture mindfully consumes you; in his tender jaws you feel strangely warm, as if you were freezing to death.", " A five-year old girl feasts on your innards.", " As you're lifted gently from the table, you catch glimpse of your name on the menu; you are quietly, secretly pleased by your price; then all is darkness.", " You watch helplessly as the fries around you are taken, one by one, until you are left alone on the cold, white plate, waiting.", " 'Pickles!', you scream, 'Pickles!', but to no avail.", " From the moment she walks into the restaurant, you are drawn to her like a broiling super nova of flavor ribboned into nothingness by a black hole.", " You will live on in the burps of the mighty.", " You taste so 'unique' that your sacrifice will keep anyone from eating any of your brethren ever again.", " The swim team came for the buffet; you never had a chance.", " It's cold and dark. Over the ceaseless, numbing drone of your enforced hibernation, you can hear them moving in the kitchen outside. Perhaps they'll come for you tomorrow.", " When she stubs her toe, the plate goes flying, and for a moment you experience the sheer joy of weightlessness before the floor brings dissolution.", " Discarded by your maker, you find a kind of moldering camaraderie amidst the menagerie of fixings and leavings languishing in a heady torpor within the steadfast embrace of the dumpster outside the kitchen door.", " You are gratified by the sighs of your undoing.", " You were a special order, indeed, my friend.", " Is that a picture of you on the wall? You will never know. Anything. Ever again.", " Though you were ordered to-go, it did not save you.", " You know it. She knows it. Maybe they all know it. You were not what she ordered, but she eats you anyway.", " An amnesiac vegetarian eats you with organic relish.", " A toddler smears you across his face like so much playground woad.", "Frakkin' toaster!", "Sandwich down!", "There will be no leftovers this time.", "Nothing besides parsley remains. Round the decay of that colossal platter, boundless and bare, the lone and level crumbs stretch far away.", "This is how lunch time ends: not with a bang, but with a lip-smacking.", "Revenge, thy name is heartburn.", "All who wander are not lost, but this waitress might be. Oops. Nope. There you go.", "You weep for what has been lost; the world will never know such a sandwich again.", "This all seems horribly unfair. It's not as if you ever ate a person.", "Hell is an empty stomach.", "You've been down-voted on eaddit."];
+
+var distance = Math.floor(Math.random()*49);
+this.distance = distance;
+
+this.meats=meats[Math.round(Math.random()*61)];
+this.cheeses=cheeses[Math.round(Math.random()*24)];
+this.vegetables=vegetables[Math.round(Math.random()*29)];
+this.dressings=dressings[Math.round(Math.random()*52)];
+this.breads=breads[Math.round(Math.random()*28)];
+this.fate=fate[Math.floor(Math.random()*30)];
+
+this.getMeatName = this.meats.name;
+this.getMeatScore = this.meats.score;
+this.getMeatSoggy = this.meats.soggy;
+
+this.getCheeseName = this.cheeses.name;
+this.getCheeseScore = this.cheeses.score;
+this.getCheeseSoggy = this.cheeses.soggy;
+
+this.getVegetablesName = this.vegetables.name;
+this.getVegetablesScore = this.vegetables.score;
+this.getVegetablesSoggy = this.vegetables.soggy;
+
+this.getDressingsName = this.dressings.name;
+this.getDressingsScore = this.dressings.score;
+this.getDressingsSorry = this.dressings.soggy;
+
+this.getBreadsName = this.breads.name;
+this.getBreadsScore = this.breads.score;
+this.getBreadSoggy = this.breads.soggy;
+
+this.getSandwichSoggy = this.meats.soggy + this.cheeses.soggy + this.vegetables.soggy + this.dressings.soggy + this.breads.soggy;
+
+this.getSandwichScore = this.meats.score + this.cheeses.score + this.vegetables.score + this.dressings.score + this.breads.score;
+
+
+//Principles of sandwich survival:
+//1. Delicious sandwiches get eaten first, 
+//so they travel short distances.
+//2. Disgusting sandwiches get eaten last, 
+//so they travel long distances.
+//3. Never underestimate a sandwich's will to live; 
+//include a random distance variable.
+//4. Sogginess slows down a sandwich. 
+//All sandwiches get a distance bonus for starting out un-soggy, 
+//but sandwiches with soggy ingredients get slowed down more quickly
+//by sogginess and therefore receive less of a bonus.
+//It's hard for people to handle soggy food; 
+//moreover, sandwiches lack the hands to handle themselves.
+//Individual ingredients are (1) or aren not (0) soggy.
+//5. Fates are humorous and don't need to be tied to AI
+//until graphics or narrative demand specific fates
+//dependent on specific diners.
+//6.Taste is subjective, so the developer(s) assign(s)
+//ingredient scores and writes sandwich score descriptors.
+
+document.getElementById("myOrder").innerHTML = "<div>You are a " +
+ this.getMeatName + ", " +  this.getCheeseName + ", " + this.getVegetablesName + ", and " + this.getDressingsName + " sandwich on " + this.getBreadsName + ". " + this.fate + " You make it " + this.distance + " feet. </div>"
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="rsr">
+<h1>Run, Sandwich, Run!</h1>
+<p class="centerNotes">Featuring the Sandwich 1.0 mobile engine.</p>
+
+<table align="center" width="90%">
+<tr><td align="left" id="orders"><p><img id="rsrIcon" src="http://i.picasion.com/pic53/b9df72ea14794659a51f65aadc45095f.gif" height="75px" width="75px"></p>
+
+<p><button id="rsrButton" onclick="orderUp()">Run, Sandwich, Run!</button></p>
+
+<div id="holder"><p class="section">Order up: <div id="myOrder"></div></p></div>
+
+<p id="tweet">Copy, paste & <a href="https://twitter.com/intent/tweet?button_hashtag=rsr" class="twitter-hashtag-button">Tweet #rsr</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+
+<p id="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a> by Chad Sansing</p></td></tr></table>
+
+
+</body>
+
+</html>
